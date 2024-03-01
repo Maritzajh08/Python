@@ -1,0 +1,27 @@
+#Question #1:
+    
+total = 0  #here we are giving the total count to start at 0
+count = 1  #giving the count to start at 0
+largest = None #we are tlling the program theres no largest as of right now
+while True:   #making a while loop that iterates each time the statements remain true
+    msg= "Enter a number-" + str(count) + ": " #telling the user to ender a number 
+    inputStr = input(msg) #naming the input of the user "inputStr
+    if inputStr.lower() == 'done':  #telling the program if the input says "done" to end the while loop there and it can be uppercase/lowercase
+        count = count - 1  
+        break
+    try:
+        num = float(inputStr)  # here we are making the input a float and calling in 'num'
+        total = total + num  # this totals up all the numbers together inputed by the user
+        if largest == None or largest < num: #here we are programming to get the largest number out of the inputs
+            largest = num
+        count = count + 1 #here the program is counting how many numbers were entered
+    except ValueError: 
+        print("Error! Please enter a number.") #if the user enters a string, it will display a error message
+     
+        
+print("\nSummary:") # here we are creating our table format
+print("============")
+print("1/4. Total number entered is:", "%.2f" %count) #this displays how many numbers were entered
+print("2/4. Total of these numbers is:", total) #this displays the sum of all those numbers 
+print("3/4. Average of these numbers is:", "%.2f" %(total/count)) #this displays the average of the sum divided by count by 2 decimals
+print("4/4. Max of these numbers is:", "%.2f" %largest) #this displays the calculate max of all the numbers entered  
